@@ -1,0 +1,84 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+    <link rel="stylesheet" href="{%static 'css\owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{%static 'css\materialize.min.css' %}">
+    <link rel="stylesheet" href="{%static 'css\owl.theme.default.min.css' %}">
+    <script src="{%static 'js\materialize.min.js' %}"></script>
+</head>
+<body>
+    
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+      </ul>
+    </div>
+  </nav>
+<div class="container">
+    <h1 >Hello World ! I'm MK</h1>
+    <p>I live with</p>
+    <ul class="collection">
+        {% for flatmate in flatmates%}
+            <li class="collection-item">{{flatmate}}</li>
+            
+            {%endfor%}
+    </ul>
+    {%if show_developer%}
+    <p>Created by {{creation}}</p>
+    {%endif%}
+
+</div>
+
+<div class="owl-carousel owl-theme">
+    <div class="item"><h4>1</h4></div>
+    <div class="item"><h4>2</h4></div>
+    <div class="item"><h4>3</h4></div>
+    <div class="item"><h4>4</h4></div>
+    <div class="item"><h4>5</h4></div>
+    <div class="item"><h4>6</h4></div>
+    <div class="item"><h4>7</h4></div>
+    <div class="item"><h4>8</h4></div>
+    <div class="item"><h4>9</h4></div>
+    <div class="item"><h4>10</h4></div>
+    <div class="item"><h4>11</h4></div>
+    <div class="item"><h4>12</h4></div>
+</div>
+
+<script src="{%static 'js\jquery-3.2.1.min.js' %}"></script>
+<script src="{%static 'js\owl.carousel.min.js' %}"></script>
+<!-- {% load static %} -->
+<script type="text/javascript">
+    $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    dots:false,
+    nav:false,
+    autoplay:true,
+    autoplayTimeout:1000,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+</script>
+
+
+</body>
+</html>
